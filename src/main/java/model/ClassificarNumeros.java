@@ -1,14 +1,26 @@
 package model;
 
-public class ClassificarNumeroCaracteres extends Classificador{
+public class ClassificarNumeros extends Classificador{
     private int contagem;
     private int bonus;
     private Status status;
+    private int qtNumeros;
 
-    public ClassificarNumeroCaracteres(String senha) {
+
+    public ClassificarNumeros(String senha) {
         super(senha);
         calcularBonus(senha);
-        verificarStatus();
+    }
+
+    private void calcularBonus(String senha) {
+        contagem = senha.length();
+        String[] vetorSenha = senha.replaceAll("\\s+", "").split("\\s*");
+        for (int i = 0; i < contagem; i++) {
+            if (vetorSenha[i].matches("[0-9]")){
+                qtNumeros++;
+            }
+        }
+        bonus = qtNumeros;
     }
 
     private void verificarStatus(){
@@ -19,11 +31,6 @@ public class ClassificarNumeroCaracteres extends Classificador{
             status = Status.SUFICIENTE;
         }
         else status = Status.EXCEPCIONAL;
-    }
-
-    private void calcularBonus(String senha) {
-        contagem = senha.length();
-        bonus = contagem * 4;
     }
 
     @Override

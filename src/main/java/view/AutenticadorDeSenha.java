@@ -1,7 +1,5 @@
 package view;
 
-import model.ClassificarNumeroCaracteres;
-
 public class AutenticadorDeSenha {
     int forcaDaSenha;
     String senha;
