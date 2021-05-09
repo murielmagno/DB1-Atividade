@@ -1,16 +1,16 @@
-package passwordMeterTest;
+package passwordMeter;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
-import passwordMeter.PasswordMeterV1;
+
 
 public class PasswordMeterTest {
 
     @InjectMocks
-    PasswordMeterV1 passwordMeterV1;
+     PasswordMeterV1 passwordMeterV1;
 
     @BeforeEach
     void setup(){
